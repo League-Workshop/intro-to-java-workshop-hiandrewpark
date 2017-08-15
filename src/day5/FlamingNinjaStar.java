@@ -1,4 +1,6 @@
 package day5;
+import java.awt.Color;
+
 import org.jointheleague.graphical.robot.Robot;
 
 /*** Teacher's note ***/
@@ -15,13 +17,30 @@ public class FlamingNinjaStar {
 		// *14. Use the methods setX and setY to move the ninja star into the center of the screen
 		
 		// *15. Make some adjustments to see what other kinds of shapes you can make.
-
+		
 		// 1. Make a new robot, and set it's pen down.
-
+		Robot x = new Robot();
+		x.hide();
+		x.penDown();
 		// 12. Set the robot speed to 10
-
+		x.setSpeed(10);
+		x.setX(1000);
+		x.setY(400);
 		// 13. Make all the code below repeat 25 times
-
+		for (int i=0;i<25;i++){
+			x.setPenColor(Color.black);
+			x.turn(360/8);
+			x.move(64);
+			x.setPenColor(Color.yellow);
+			x.turn(-40);
+			x.move(flameSize);
+			x.turn(170);
+			x.move(flameSize);
+			x.setPenColor(Color.black);
+			x.turn(64);
+			x.move(baseSize);
+			
+		}
 			// 2. Turn the robot 1/8 of a circle
 		
 			// 3. Move the robot 64 pixels
